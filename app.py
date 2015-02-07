@@ -51,4 +51,4 @@ def delete(msg_filename):
 
 
 if __name__ == "__main__":
-	app.run(port=localConfig.PORT)
+	app.run(host=localConfig.HOST, port=localConfig.PORT)
