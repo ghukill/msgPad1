@@ -1,0 +1,81 @@
+<html>
+
+<head>
+	<title>msgPad1 - main</title>
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="/static/skeleton/css/normalize.css">
+	<link rel="stylesheet" href="/static/skeleton/css/skeleton.css">
+
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+	<!-- JS -->
+	<script type="text/javascript" src="/static/js/jquery-1.11.2.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+	<div id="container" class="container">
+
+		<div class="row tight">
+			<div class="twelve columns">
+				<div id="logo">
+					<a href="./">
+					<pre class="tight">
+███╗   ███╗███████╗ ██████╗ ██████╗  █████╗ ██████╗        ██╗
+████╗ ████║██╔════╝██╔════╝ ██╔══██╗██╔══██╗██╔══██╗      ███║
+██╔████╔██║███████╗██║  ███╗██████╔╝███████║██║  ██║█████╗╚██║
+██║╚██╔╝██║╚════██║██║   ██║██╔═══╝ ██╔══██║██║  ██║╚════╝ ██║
+██║ ╚═╝ ██║███████║╚██████╔╝██║     ██║  ██║██████╔╝       ██║
+╚═╝     ╚═╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚═════╝        ╚═╝
+                    </pre>		
+					</a>					
+				</div>
+			</div>
+		</div>
+
+		<div class="row tight">
+			<div class="twelve columns">
+	
+				<div id="msg_form">
+					<form action="/store" method="POST">
+						<textarea id="msg_textarea" name="msg"></textarea><br>
+						<input type="submit">
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row tight">
+			<div class="twelve columns">
+				<div id="msg_print">
+					<table>
+
+					{% for message in messages %}
+						<tr id="{{message[0]}}">
+							<td>{{message[1]|safe}} (<a href="/delete/{{message[0]}}">delete</a>)</td>
+						</tr>
+					{% endfor %}
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+</body>
+
+</html>
