@@ -6,6 +6,8 @@ import json
 import pickle
 import time
 
+import localConfig
+
 
 
 # Test Flask initialization with main module.
@@ -49,4 +51,4 @@ def delete(msg_filename):
 
 
 if __name__ == "__main__":
-	app.run()
+	app.run(port=localConfig.PORT)
